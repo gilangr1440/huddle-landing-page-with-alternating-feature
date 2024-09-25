@@ -1,0 +1,493 @@
+$pink: hsl(322, 100%, 66%);
+
+$very-pale-cyan: hsl(193, 100%, 96%);
+$very-dark-cyan: hsl(192, 100%, 9%);
+$grayish-blue: hsl(208, 11%, 55%);
+
+$poppins: "Poppins", sans-serif;
+$open-sans: "Open Sans", sans-serif;
+
+body {
+  font-size: 18px;
+  max-width: 100vw;
+
+  @at-root .header {
+    background: url("../../images/bg-hero-mobile.svg") no-repeat;
+    background-size: contain;
+    background-color: $very-pale-cyan;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    margin-bottom: 80px;
+
+    @at-root .header__logo-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem 1.5rem;
+      margin-bottom: 60px;
+
+      @at-root .header__logo {
+        width: 35%;
+      }
+
+      @at-root .try-button {
+        font-family: $poppins;
+        font-size: 0.9em;
+        font-weight: 700;
+        padding: 5px;
+        width: 35%;
+        background-color: white;
+        border-radius: 50px;
+        border: none;
+        box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
+      }
+
+      @at-root .try-button:hover {
+        color: rgb(134, 134, 134);
+        cursor: pointer;
+      }
+
+      @at-root .try-button:active {
+        color: rgb(167, 167, 167);
+        cursor: pointer;
+      }
+    }
+
+    @at-root .header__image-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $very-dark-cyan;
+
+      @at-root .header__desc-container {
+        text-align: center;
+        width: 80%;
+        margin-bottom: 60px;
+
+        @at-root .header__title {
+          font-family: $poppins;
+          font-size: 1.6em;
+          font-weight: 700;
+          line-height: 1.3;
+          margin-bottom: 30px;
+        }
+
+        @at-root .header__desc {
+          font-family: $open-sans;
+          line-height: 1.4;
+          font-weight: 500;
+          margin-bottom: 40px;
+        }
+
+        @at-root .start-button {
+          font-family: $open-sans;
+          font-weight: 500;
+          color: white;
+          padding: 15px;
+          background-color: $pink;
+          border: none;
+          border-radius: 50px;
+          width: 80%;
+          box-shadow: 5px 5px 10px 0px hsla(322, 100%, 66%, 0.3);
+        }
+
+        @at-root .start-button:hover {
+          background-color: lighten($color: $pink, $amount: 10%);
+          cursor: pointer;
+        }
+
+        @at-root .start-button:active {
+          background-color: lighten($color: $pink, $amount: 15%);
+          cursor: pointer;
+        }
+      }
+
+      @at-root .header__image {
+        width: 80%;
+      }
+    }
+  }
+
+  @at-root .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    @at-root .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      gap: 70px;
+      padding: 50px;
+      width: 90%;
+      border-radius: 15px;
+      box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      text-align: center;
+      height: 600px;
+
+      @at-root .card__image {
+        width: 300px;
+        max-width: 100%;
+      }
+
+      @at-root .card__title {
+        font-family: $poppins;
+        font-weight: 700;
+        font-size: 1.35em;
+        margin-bottom: 25px;
+        color: $very-dark-cyan;
+      }
+
+      @at-root .card__desc {
+        font-family: $open-sans;
+        font-size: 1em;
+        line-height: 1.4;
+        color: $grayish-blue;
+      }
+    }
+
+    @at-root .card_height_small {
+      height: 220px;
+      padding: 30px 10px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      top: calc(220px / 2);
+      background-color: white;
+    }
+  }
+
+  @at-root .footer {
+    background-color: $very-dark-cyan;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 200px 20px 50px;
+
+    @at-root .footer__logo-container {
+      width: 40%;
+      padding: 10px;
+      background-color: white;
+      border-radius: 10px;
+
+      @at-root .footer__logo {
+        width: 100%;
+      }
+    }
+
+    @at-root .footer__first-row {
+      @at-root .footer__about {
+        margin-bottom: 80px;
+
+        @at-root .footer__about-grid {
+          display: grid;
+          grid-template-columns: 10% 90%;
+          grid-template-rows: auto;
+          grid-template-areas: "icon-location location" "icon-phone phone" "icon-email email";
+          row-gap: 30px;
+          column-gap: 10px;
+          color: white;
+          font-family: $open-sans;
+          font-size: 1.2em;
+
+          @at-root .footer__icon {
+            width: 20px;
+          }
+
+          @at-root .footer__icon_location {
+            grid-area: icon-location;
+          }
+
+          @at-root .footer__location {
+            grid-area: location;
+            line-height: 1.5;
+          }
+
+          @at-root .footer__icon_phone {
+            grid-area: icon-phone;
+            width: 25px;
+          }
+
+          @at-root .footer__phone {
+            grid-area: phone;
+          }
+
+          @at-root .footer__icon_email {
+            grid-area: icon-email;
+            width: 28px;
+          }
+
+          @at-root .footer__email {
+            grid-area: email;
+          }
+        }
+      }
+
+      @at-root .footer__link-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 80px;
+
+        @at-root .footer__link {
+          font-family: $open-sans;
+          text-decoration: none;
+          color: white;
+          font-size: 1.2em;
+          width: fit-content;
+        }
+
+        @at-root .footer__link:hover {
+          text-decoration: underline;
+        }
+
+        @at-root .footer__link:active {
+          text-decoration: underline;
+          color: lighten($color: $pink, $amount: 15%);
+        }
+      }
+
+      @at-root .footer__social-media-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        @at-root .footer__social-media {
+          font-size: 1.2em;
+          display: block;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 25px;
+          height: 25px;
+          padding: 10px;
+          border: solid 1px white;
+          border-radius: 50%;
+        }
+
+        @at-root .footer__social-media:hover {
+          color: $pink;
+          border-color: $pink;
+        }
+
+        @at-root .footer__social-media:active {
+          color: lighten($color: $pink, $amount: 15%);
+          border-color: lighten($color: $pink, $amount: 15%);
+        }
+      }
+    }
+
+    @at-root .footer__second-row {
+      text-align: center;
+      font-family: $poppins;
+      color: white;
+      font-size: 0.8em;
+    }
+
+    @at-root .attribution {
+      text-align: center;
+      font-family: $poppins;
+      color: white;
+      font-size: 0.8em;
+
+      a {
+        text-decoration: none;
+        color: hsl(322, 100%, 66%);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    @at-root .header {
+      background: url("../../images/bg-hero-desktop.svg") no-repeat;
+      background-size: contain;
+      background-color: $very-pale-cyan;
+      padding-bottom: 80px;
+      margin-bottom: 170px;
+
+      @at-root .header__logo-container {
+        padding: 3.5rem 4.8rem;
+        margin-bottom: 25px;
+
+        @at-root .header__logo {
+          width: 200px;
+        }
+
+        @at-root .try-button {
+          width: 230px;
+          padding: 15px;
+        }
+      }
+
+      @at-root .header__image-container {
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+        gap: 70px;
+
+        @at-root .header__desc-container {
+          flex: 40%;
+          text-align: start;
+          margin-bottom: 0;
+
+          @at-root .header__title {
+            font-size: 2.5em;
+            font-weight: 600;
+          }
+
+          @at-root .header__desc {
+            font-size: 1.1em;
+          }
+
+          @at-root .start-button {
+            width: 300px;
+            padding: 20px;
+          }
+        }
+
+        @at-root .header__image {
+          width: 50%;
+        }
+      }
+    }
+
+    @at-root .main {
+      @at-root .card {
+        width: 85%;
+        height: fit-content;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 50px 25px 50px 105px;
+        text-align: start;
+
+        @at-root .card_flex_reverse {
+          flex-direction: row-reverse;
+        }
+
+        @at-root .card__image {
+          width: 40%;
+        }
+
+        @at-root .card__text {
+          width: 45%;
+
+          @at-root .card__title {
+            font-size: 1.6em;
+          }
+        }
+
+        @at-root .card_height_small {
+          width: 50%;
+          flex-direction: column;
+          padding: 60px 20px;
+          gap: 15px;
+          top: 80px;
+          text-align: center;
+
+          @at-root .start-button_big {
+            width: 370px;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+
+    @at-root .footer {
+      @at-root .footer__logo-container {
+        width: 200px;
+        margin-left: 100px;
+      }
+
+      @at-root .footer__first-row {
+        display: flex;
+        justify-content: space-between;
+        width: 85%;
+        margin: auto;
+
+        @at-root .footer__about {
+          max-width: 380px;
+          margin: 0;
+          font-size: 0.8rem;
+
+          @at-root .footer__about-grid {
+            @at-root .footer__icon {
+              width: 15px;
+            }
+
+            @at-root .footer__icon_phone {
+              grid-area: icon-phone;
+              width: 20px;
+            }
+
+            @at-root .footer__icon_email {
+              grid-area: icon-email;
+              width: 20px;
+            }
+          }
+        }
+
+        @at-root .footer__link-container {
+          width: fit-content;
+          margin: 0;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(3, 50px);
+          grid-template-areas: "a b" "c d" "e f";
+          row-gap: 0;
+          column-gap: 150px;
+          font-size: 0.9rem;
+
+          @at-root .footer__link_position_a {
+            grid-area: a;
+          }
+
+          @at-root .footer__link_position_b {
+            grid-area: b;
+          }
+
+          @at-root .footer__link_position_c {
+            grid-area: c;
+          }
+
+          @at-root .footer__link_position_d {
+            grid-area: d;
+          }
+
+          @at-root .footer__link_position_e {
+            grid-area: e;
+          }
+
+          @at-root .footer__link_position_f {
+            grid-area: f;
+          }
+        }
+
+        @at-root .footer__social-media-container {
+          @at-root .footer__social-media {
+            font-size: 0.9em;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      @at-root .footer__second-row {
+        font-size: 0.8rem;
+        text-align: end;
+        width: 85%;
+        margin: auto;
+      }
+    }
+  }
+}
